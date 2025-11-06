@@ -63,13 +63,24 @@ async function displaySinglePost(postContainer) {
         const response = await fetch(`posts/${post.id}.html`);
         const content = await response.text();
 
-        postContainer.innerHTML = `
-            <article class="post">
-                <header class="post-header">
+        // Create full-width header
+        const headerHTML = `
+            <div class="single-post-header">
+                <div class="grid-container">
                     <div class="post-category">${post.category}</div>
                     <h1 class="post-title">${post.title}</h1>
                     <div class="post-meta">${formatDate(post.date)}</div>
-                </header>
+                </div>
+            </div>
+        `;
+
+        // Insert header before site-content
+        const siteContent = document.querySelector('.site-content');
+        siteContent.insertAdjacentHTML('beforebegin', headerHTML);
+
+        // Insert content in container
+        postContainer.innerHTML = `
+            <article class="post">
                 <div class="post-content">
                     ${content}
                 </div>

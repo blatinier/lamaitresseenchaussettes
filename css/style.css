@@ -73,14 +73,20 @@ a:hover {
     padding: 40px 0 20px 0;
 }
 
+.site-logo {
+    text-align: center;
+    width: 100%;
+}
+
 .site-header .header-image {
-    width: 470px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1500px;
     height: auto;
 }
 
 .inside-header {
     text-align: center;
+    padding: 0;
 }
 
 /* Main Navigation */
@@ -128,9 +134,9 @@ a:hover {
 
 /* Blog Grid */
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .post-card {
@@ -237,10 +243,22 @@ a:hover {
 }
 
 /* Single post page */
+.single-post-header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 40px 0;
+    padding: 40px 0;
+    background-color: var(--base-2);
+    text-align: center;
+}
+
+.single-post-header .grid-container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 .post-header {
     margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--base);
 }
 
 .post-title {
@@ -254,7 +272,7 @@ a:hover {
 }
 
 .post-content {
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .post-content p {
@@ -309,10 +327,6 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .content-area {
         width: 70%;
     }
@@ -337,10 +351,6 @@ a:hover {
         width: 100%;
     }
 
-    .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
 
     .site-header {
         padding: 10px 0 0 0;
