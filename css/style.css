@@ -156,24 +156,35 @@ a:hover {
 
 /* First Post - FEATURED */
 .post-card:first-child {
-    background: var(--base-2);
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
+    background: var(--base-3);
 }
 
 .post-card:first-child img {
     width: 100%;
     height: auto;
+    margin-bottom: 20px;
 }
 
-.post-card:first-child .post-content-wrapper {
+/* Regular Posts - 2 COLUMN GRID */
+.post-card:not(:first-child) {
+    background: var(--base-3);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.post-card:not(:first-child) img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.post-card:not(:first-child) .post-content-wrapper {
     padding: 0;
 }
 
-/* Regular Posts */
+/* All Posts */
 .post-card {
     background: var(--base-3);
     overflow: hidden;
@@ -289,6 +300,27 @@ a:hover {
     color: var(--accent-2);
 }
 
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--contrast);
+    color: var(--base-3);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.instagram-link:hover {
+    background-color: var(--accent-2);
+}
+
+.instagram-link svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* Single post page */
 .single-post-header {
     width: 100%;
@@ -382,8 +414,12 @@ a:hover {
         width: 30%;
     }
 
-    .post-card:first-child {
+    .post-card:not(:first-child) {
         grid-template-columns: 1fr;
+    }
+
+    .post-card:not(:first-child) img {
+        margin-bottom: 20px;
     }
 }
 

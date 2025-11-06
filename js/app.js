@@ -93,6 +93,36 @@ async function displaySinglePost(postContainer) {
     }
 }
 
+// Filter posts by category
+function filterPostsByCategory(category) {
+    loadPosts().then(posts => {
+        const postsContainer = document.getElementById('posts-container');
+        if (!postsContainer) return;
+
+        let filteredPosts = posts;
+        if (category) {
+            filteredPosts = posts.filter(post => post.category === category);
+        }
+
+        filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        postsContainer.innerHTML = filteredPosts.map(post => `
+            <article class="post-card">
+                <a href="post.html?id=${post.id}">
+                    <img src="${post.image}" alt="${post.title}">
+                </a>
+                <div class="post-content-wrapper">
+                    <div class="post-category">${post.category}</div>
+                    <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
+                    <div class="post-date">${formatDate(post.date)}</div>
+                    <p class="post-excerpt">${post.excerpt}</p>
+                    <a href="post.html?id=${post.id}" class="read-more">LIRE L'ARTICLE</a>
+                </div>
+            </article>
+        `).join('');
+    });
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     const postsContainer = document.getElementById('posts-container');
@@ -100,6 +130,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (postsContainer) {
         displayPosts(postsContainer);
+
+        // Add category filter listeners
+        document.querySelectorAll('[data-category]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const category = this.getAttribute('data-category');
+                filterPostsByCategory(category);
+            });
+        });
     }
     if (postContainer) {
         displaySinglePost(postContainer);
