@@ -1,6 +1,4 @@
 // Simple blog system using JSON for posts data
-const postsContainer = document.getElementById('posts-container');
-const postContainer = document.getElementById('post-container');
 
 // Load posts data
 async function loadPosts() {
@@ -14,10 +12,15 @@ async function loadPosts() {
     }
 }
 
-// Display all posts on home page
-async function displayPosts() {
-    if (!postsContainer) return;
+// Format date to French format
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('fr-FR', options);
+}
 
+// Display all posts on home page
+async function displayPosts(postsContainer) {
     const posts = await loadPosts();
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -33,9 +36,7 @@ async function displayPosts() {
 }
 
 // Display single post
-async function displaySinglePost() {
-    if (!postContainer) return;
-
+async function displaySinglePost(postContainer) {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
 
@@ -76,17 +77,15 @@ async function displaySinglePost() {
     }
 }
 
-// Format date to French format
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('fr-FR', options);
-}
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    const postsContainer = document.getElementById('posts-container');
+    const postContainer = document.getElementById('post-container');
 
-// Initialize
-if (postsContainer) {
-    displayPosts();
-}
-if (postContainer) {
-    displaySinglePost();
-}
+    if (postsContainer) {
+        displayPosts(postsContainer);
+    }
+    if (postContainer) {
+        displaySinglePost(postContainer);
+    }
+});

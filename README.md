@@ -107,28 +107,31 @@ Ouvrez `index.html` dans votre navigateur pour voir votre nouveau post !
 - **Lecture offerte** : Lectures partagées avec les élèves
 - **Vie de classe** : Organisation et vie quotidienne de la classe
 
-## Hébergement gratuit
+## Déploiement automatique
 
-### Cloudflare Pages (recommandé)
+Le site est configuré pour se déployer automatiquement sur Cloudflare Pages à chaque push vers GitHub.
 
-1. Créez un compte sur [Cloudflare](https://dash.cloudflare.com/)
-2. Allez dans "Pages"
-3. Connectez votre dépôt Git ou uploadez directement les fichiers
-4. Le site sera déployé automatiquement !
+**Voir le guide complet**: [DEPLOYMENT.md](DEPLOYMENT.md)
 
-### GitHub Pages
+### Quick Start
 
-1. Créez un dépôt GitHub
-2. Uploadez tous les fichiers
-3. Allez dans Settings > Pages
-4. Sélectionnez la branche "main" et sauvegardez
-5. Votre site sera disponible à `https://votre-username.github.io/nom-du-repo`
+1. Créez un dépôt GitHub et poussez le code
+2. Connectez le dépôt à Cloudflare Pages
+3. À chaque `git push`, le site se déploie automatiquement !
 
-### Netlify
+### Workflow pour publier un nouveau post
 
-1. Créez un compte sur [Netlify](https://www.netlify.com/)
-2. Glissez-déposez le dossier du site dans Netlify Drop
-3. C'est en ligne !
+```bash
+# 1. Ajouter le post
+./add-post.sh
+
+# 2. Commit et push
+git add .
+git commit -m "Nouveau post: Titre"
+git push
+
+# 3. Le site est automatiquement mis à jour !
+```
 
 ## Format HTML simple pour les posts
 
