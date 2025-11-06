@@ -30,9 +30,11 @@ async function displayPosts(postsContainer) {
                 <img src="${post.image}" alt="${post.title}">
             </a>
             <div class="post-content-wrapper">
-                <div class="post-category">${post.category}</div>
+                <div class="post-meta-line">
+                    <span class="post-category">${post.category}</span>
+                    <span class="post-date">${formatDate(post.date)}</span>
+                </div>
                 <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
-                <div class="post-date">${formatDate(post.date)}</div>
                 <p class="post-excerpt">${post.excerpt}</p>
                 <a href="post.html?id=${post.id}" class="read-more">LIRE L'ARTICLE</a>
             </div>
@@ -112,9 +114,11 @@ function filterPostsByCategory(category) {
                     <img src="${post.image}" alt="${post.title}">
                 </a>
                 <div class="post-content-wrapper">
-                    <div class="post-category">${post.category}</div>
+                    <div class="post-meta-line">
+                        <span class="post-category">${post.category}</span>
+                        <span class="post-date">${formatDate(post.date)}</span>
+                    </div>
                     <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
-                    <div class="post-date">${formatDate(post.date)}</div>
                     <p class="post-excerpt">${post.excerpt}</p>
                     <a href="post.html?id=${post.id}" class="read-more">LIRE L'ARTICLE</a>
                 </div>
