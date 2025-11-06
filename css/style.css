@@ -156,12 +156,14 @@ a:hover {
 
 /* First Post - FEATURED */
 .post-card:first-child {
-    background: var(--base-3);
+    background: var(--base-2);
+    padding: 20px;
 }
 
 .post-card:first-child img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     margin-bottom: 20px;
 }
 
@@ -238,21 +240,22 @@ a:hover {
 
 .read-more {
     display: inline-block;
-    padding: calc(.667em + 2px) calc(1.333em + 2px);
-    background-color: #55555e;
-    color: #ffffff;
+    padding: 0;
+    background-color: transparent;
+    color: var(--contrast);
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: 600;
     font-family: 'Crimson Text', serif;
-    transition: background-color 0.3s ease;
-    border-radius: 9999px;
+    transition: color 0.3s ease;
+    border-radius: 0;
+    text-decoration: underline;
 }
 
 .read-more:hover {
-    background-color: #3f4047;
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--contrast-2);
 }
 
 /* Sidebar */
@@ -272,6 +275,7 @@ a:hover {
     margin-bottom: 20px;
     color: var(--contrast);
     font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
 }
 
 .sidebar .widget p {
@@ -304,22 +308,22 @@ a:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #55555e;
-    color: #ffffff;
-    border-radius: 9999px;
-    transition: background-color 0.3s ease;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    color: var(--contrast);
+    border-radius: 0;
+    transition: color 0.3s ease;
 }
 
 .instagram-link:hover {
-    background-color: #3f4047;
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--contrast-2);
 }
 
 .instagram-link svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Single post page */
