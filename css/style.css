@@ -139,7 +139,7 @@ a:hover {
 .content-area {
     width: 75%;
     padding-right: 40px;
-    border-right: 1px solid var(--base);
+    border-right: 1px solid var(--contrast-3);
 }
 
 .sidebar {
@@ -285,7 +285,7 @@ a:hover {
 .widget-title {
     font-size: 20px;
     margin-bottom: 20px;
-    color: var(--contrast);
+    color: var(--contrast-2);
     font-family: 'Cormorant Garamond', serif;
     text-transform: uppercase;
 }
