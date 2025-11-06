@@ -10,27 +10,54 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1 class="site-title"><a href="index.html">La maîtresse en chaussettes</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="index.html">Blog</a></li>
-                </ul>
-            </nav>
+    <header class="site-header">
+        <div class="inside-header grid-container">
+            <div class="site-logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="La maîtresse en chaussettes" class="header-image">
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <div id="post-container">
-            <!-- Post content will be loaded here by JavaScript -->
+    <nav class="main-navigation" id="site-navigation">
+        <div class="inside-navigation grid-container">
+            <div class="main-nav">
+                <ul>
+                    <li><a href="index.html">ACCUEIL</a></li>
+                    <li><a href="about.html">À PROPOS</a></li>
+                    <li><a href="index.html">BLOG</a></li>
+                </ul>
+            </div>
         </div>
-    </main>
+    </nav>
 
-    <footer>
-        <p>&copy; 2024 La maîtresse en chaussettes</p>
+    <div class="site-content grid-container container">
+        <main class="content-area" id="primary">
+            <div id="post-container">
+                <!-- Post content will be loaded here by JavaScript -->
+            </div>
+        </main>
+
+        <aside class="sidebar widget-area">
+            <div class="widget">
+                <h2 class="widget-title">Catégories</h2>
+                <ul>
+                    <li><a href="index.html">Art visuel</a> (5)</li>
+                    <li><a href="index.html">Jeu collectif</a> (1)</li>
+                    <li><a href="index.html">Lecture offerte</a> (2)</li>
+                    <li><a href="index.html">Vie de classe</a> (1)</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="site-info">
+            <div class="grid-container">
+                <p>&copy; 2024 La maîtresse en chaussettes</p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/app.js"></script>

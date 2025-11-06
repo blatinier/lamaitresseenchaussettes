@@ -26,12 +26,16 @@ async function displayPosts(postsContainer) {
 
     postsContainer.innerHTML = posts.map(post => `
         <article class="post-card">
-            <div class="post-image">[Image]</div>
-            <div class="post-category">${post.category}</div>
-            <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
-            <div class="post-date">${formatDate(post.date)}</div>
-            <p class="post-excerpt">${post.excerpt}</p>
-            <a href="post.html?id=${post.id}" class="read-more">LIRE L'ARTICLE</a>
+            <a href="post.html?id=${post.id}">
+                <img src="${post.image}" alt="${post.title}">
+            </a>
+            <div class="post-content-wrapper">
+                <div class="post-category">${post.category}</div>
+                <h2><a href="post.html?id=${post.id}">${post.title}</a></h2>
+                <div class="post-date">${formatDate(post.date)}</div>
+                <p class="post-excerpt">${post.excerpt}</p>
+                <a href="post.html?id=${post.id}" class="read-more">LIRE L'ARTICLE</a>
+            </div>
         </article>
     `).join('');
 }
