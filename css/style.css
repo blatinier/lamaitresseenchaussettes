@@ -79,8 +79,8 @@ a:hover {
 }
 
 .site-header .header-image {
-    width: 100%;
-    max-width: 1500px;
+    width: 470px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -132,11 +132,27 @@ a:hover {
     width: 25%;
 }
 
+/* Title Banner */
+.title-banner {
+    width: 100%;
+    background-color: var(--base-3);
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Blog Grid */
 .blog-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .post-card {
@@ -327,6 +343,10 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .content-area {
         width: 70%;
     }
@@ -349,6 +369,11 @@ a:hover {
     .content-area,
     .sidebar {
         width: 100%;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
 
