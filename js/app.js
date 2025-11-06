@@ -129,15 +129,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const postContainer = document.getElementById('post-container');
 
     if (postsContainer) {
-        displayPosts(postsContainer);
+        // Check for category parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('category');
+
+        if (categoryParam) {
+            filterPostsByCategory(categoryParam);
+        } else {
+            displayPosts(postsContainer);
+        }
 
         // Add category filter listeners
         document.querySelectorAll('[data-category]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const category = this.getAttribute('data-category');
+                // Update URL with category parameter
+                const newUrl = `${window.location.pathname}?category=${encodeURIComponent(category)}`;
+                window.history.pushState({category: category}, '', newUrl);
                 filterPostsByCategory(category);
             });
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', function(e) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryParam = urlParams.get('category');
+            if (categoryParam) {
+                filterPostsByCategory(categoryParam);
+            } else {
+                displayPosts(postsContainer);
+            }
         });
     }
     if (postContainer) {

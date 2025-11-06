@@ -46,5 +46,29 @@
     "date": "2024-04-02",
     "excerpt": "Transformer la classe avec un canapé d'occasion, des tapis de jardin et des coussins. Une politique \"chaussettes seulement\" pour créer un environnement confortable.",
     "image": "images/post6.png"
+  },
+  {
+    "id": "lautoportrait-art-visuel",
+    "title": "L'autoportrait en art visuel",
+    "category": "Art visuel",
+    "date": "2024-04-01",
+    "excerpt": "Pour cette séquence sur l'autoportrait, j'ai choisis de travailler plus particulièrement sur la photographie et l'exploration de différents styles d'autoportraits à travers les époques.",
+    "image": "images/post7.png"
+  },
+  {
+    "id": "rituel-musee-classe",
+    "title": "Le rituel du musée dans la classe",
+    "category": "Art visuel",
+    "date": "2024-04-01",
+    "excerpt": "Lors de chaque nouvelle séquence d'art visuel, j'organise un rituel appelé \"visite du musée\" qui crée une expérience immersive d'exploration artistique pour les élèves.",
+    "image": "images/post8.jpeg"
+  },
+  {
+    "id": "travailler-theme-art-visuel",
+    "title": "Travailler par thème en art visuel",
+    "category": "Art visuel",
+    "date": "2024-04-01",
+    "excerpt": "Je préfère travailler sur un grand thème par période plutôt que sur des artistes ciblés. Cette approche me permet d'explorer l'art de manière plus flexible et engageante.",
+    "image": "images/post9.png"
   }
 ]

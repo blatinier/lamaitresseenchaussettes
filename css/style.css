@@ -238,21 +238,21 @@ a:hover {
 
 .read-more {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--contrast);
-    color: var(--base-3);
+    padding: calc(.667em + 2px) calc(1.333em + 2px);
+    background-color: #55555e;
+    color: #ffffff;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: 600;
     font-family: 'Crimson Text', serif;
     transition: background-color 0.3s ease;
-    border-radius: 0;
+    border-radius: 9999px;
 }
 
 .read-more:hover {
-    background-color: var(--contrast-2);
-    color: var(--base-3);
+    background-color: #3f4047;
+    color: #ffffff;
 }
 
 /* Sidebar */
@@ -287,7 +287,7 @@ a:hover {
 }
 
 .sidebar .widget ul li {
-    padding: 8px 0;
+    padding: 4px 0;
     font-family: 'Crimson Text', serif;
 }
 
@@ -306,14 +306,15 @@ a:hover {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--contrast);
-    color: var(--base-3);
-    border-radius: 4px;
+    background-color: #55555e;
+    color: #ffffff;
+    border-radius: 9999px;
     transition: background-color 0.3s ease;
 }
 
 .instagram-link:hover {
-    background-color: var(--accent-2);
+    background-color: #3f4047;
+    color: #ffffff;
 }
 
 .instagram-link svg {
